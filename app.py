@@ -1,14 +1,10 @@
+from flask import Flask, render_template
 
-import flask
-from flask import render_template
-
-
-app = flask.app("_name_")
+app = Flask(__name__)
 
 @app.route("/")
+def home():
+    return render_template("index.html")
 
-def home ():
-    return("index.html")
-if __name__ == "_main_":
+if __name__ == "__main__":
     app.run(debug=True)
-
